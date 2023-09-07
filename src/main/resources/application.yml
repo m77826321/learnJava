@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: ${env.POSTGRES_URL}
+    username: ${env.POSTGRES_USER}
+    password: ${env.POSTGRES_PASSWORD}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
