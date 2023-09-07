@@ -20,6 +20,7 @@ public class ProductController {
        return productService.getProduct();
     }
 
+
     @PostMapping
     public Product addProduct(@PathVariable Product product){
         return productService.addProduct(product);
