@@ -36,7 +36,7 @@ public class SwaggerConfig {
                 .info(
                         new Info()
                                 .title(" Rest Api")
-                                .description("Rest Api for kyc application")
+                                .description("Rest Api for product application")
                                 .version("1.0")
                 );
     }
