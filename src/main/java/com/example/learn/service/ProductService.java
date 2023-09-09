@@ -15,13 +15,16 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<Product> getProduct(){
-        var lst =productRepository.findAll();
+    public List<Product> getProduct() {
+        var lst = productRepository.findAll();
         return lst;
     }
 
-    public Product addProduct(Product product){
-        var productSaved =productRepository.save(product);
+    public Product addProduct(Product product) throws Exception {
+        if (product.getName().length() > 5) {
+            throw new Exception("Sorry Add");
+        }
+        var productSaved = productRepository.save(product);
         return productSaved;
     }
 }

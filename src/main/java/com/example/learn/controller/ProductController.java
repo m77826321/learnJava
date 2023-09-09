@@ -30,7 +30,7 @@ public class ProductController {
 
 
     @PostMapping("/add")
-    public Product addProduct(@PathVariable Product product){
+    public Product addProduct(@RequestBody Product product) throws Exception {
         return productService.addProduct(product);
     }
 }
