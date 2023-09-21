@@ -19,8 +19,12 @@ import java.util.List;
 @Log4j2
 public class ProductController {
 
-    @Autowired
     private ProductService productService;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping(value = {"/get"})
     public List<Product> getAllCheckOutStatusBankTransferLimited() {

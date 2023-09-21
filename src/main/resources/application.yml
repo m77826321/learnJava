@@ -1,8 +1,12 @@
 spring:
+  datasource:
+    url: ${env.POSTGRES_URL}
+    username: ${env.POSTGRES_USER}
+    password: ${env.POSTGRES_PASSWORD}
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     open-in-view: false
     properties:
       hibernate:
@@ -10,10 +14,6 @@ spring:
         hbm2ddl:
          auto: none
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  datasource:
-    url: ${env.POSTGRES_URL}
-    username: ${env.POSTGRES_USER}
-    password: ${env.POSTGRES_PASSWORD}
 springdoc:
   api-docs:
     enabled: true

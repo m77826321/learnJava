@@ -8,36 +8,31 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "product")
+@Entity(name = "orders")
 @Setter
 @Getter
 @RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product implements Serializable {
+public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull
-    private String name;
-    @NonNull
-    private String family;
+    private int number;
     @NonNull
     private BigDecimal price;
-
     @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinTable(name="order_product" ,
-    joinColumns={@JoinColumn(name="product_id")},inverseJoinColumns ={@JoinColumn(name="order_id")})
-    private Set<Order> orders;
+            joinColumns={@JoinColumn(name="order_id")},inverseJoinColumns ={@JoinColumn(name="product_id")})
+    private Set<Product> products;
 
-    public void addOrder(Order order) {
-        if (orders == null) {
-            orders = new HashSet<>();
+    public void addProduct(Product product) {
+        if (products == null) {
+            products = new HashSet<>();
         }
-        orders.add((order));
+        products.add((product));
     }
-
-
 }
