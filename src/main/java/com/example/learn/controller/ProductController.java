@@ -29,7 +29,7 @@ public class ProductController {
     @GetMapping(value = {"/get"})
     public List<Product> getAllCheckOutStatusBankTransferLimited() {
 
-       return productService.getProduct();
+       return productService.getProducts();
     }
 
 
