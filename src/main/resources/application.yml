@@ -8,12 +8,12 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: false
-    properties:
-      hibernate:
-        format_sql: true
-        hbm2ddl:
-         auto: none
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        hbm2ddl:
+#         auto: none
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 springdoc:
   api-docs:
