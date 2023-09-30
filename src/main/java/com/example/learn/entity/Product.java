@@ -14,7 +14,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product implements Serializable {
+public class Product implements Serializable   {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +38,11 @@ public class Product implements Serializable {
         }
         orders.add((order));
     }
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_detail_id", referencedColumnName = "id",  insertable = false, updatable = false)
+    private ProductDetail productDetail;
+
 
 
 }
