@@ -32,7 +32,6 @@ public class ProductService {
         return product;
     }
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
     @CacheEvict(cacheNames = "product-cache", key = "#product.id")
     public Product addProduct(Product product) throws Exception {
         if (product.getName().length() > 5) {
