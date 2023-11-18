@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Import;
 
+import java.util.Collections;
+
 @Import({
         SwaggerConfig.class,
 })
@@ -13,7 +15,10 @@ import org.springframework.context.annotation.Import;
 public class LearnApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LearnApplication.class, args);
+
+        SpringApplication app =new SpringApplication(LearnApplication.class);
+        app.setDefaultProperties(Collections.singletonMap("server.port","8080"));
+        app.run(args);
     }
 
 }

@@ -1,4 +1,7 @@
+
 spring:
+
+
   datasource:
     url: ${env.POSTGRES_URL}
     username: ${env.POSTGRES_USER}
@@ -11,6 +14,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 40MB
+      max-request-size: 80MB
 #        hbm2ddl:
 #         auto: none
 #        dialect: org.hibernate.dialect.PostgreSQLDialect
