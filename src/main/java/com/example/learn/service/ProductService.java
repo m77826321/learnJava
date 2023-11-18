@@ -3,15 +3,18 @@ package com.example.learn.service;
 import com.example.learn.entity.Product;
 import com.example.learn.repository.ProductRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 
 import java.util.List;
 
 @Service
 public class ProductService {
 
+    @Autowired
     private final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository) {
@@ -29,7 +32,6 @@ public class ProductService {
         return product;
     }
 
-    @Transactional
     @CacheEvict(cacheNames = "product-cache", key = "#product.id")
     public Product addProduct(Product product) throws Exception {
         if (product.getName().length() > 5) {
