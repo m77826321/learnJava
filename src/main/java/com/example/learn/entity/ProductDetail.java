@@ -3,6 +3,7 @@ package com.example.learn.entity;
 import com.example.learn.audit.Auditable;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -15,6 +16,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class ProductDetail extends Auditable<String> {
 
     @Id
