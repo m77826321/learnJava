@@ -14,7 +14,10 @@ spring:
 #        hbm2ddl:
 #         auto: none
 #        dialect: org.hibernate.dialect.PostgreSQLDialect
-
+#  security:
+#    user:
+#      password: 1234
+#      name: admin
 springdoc:
   api-docs:
     enabled: true
@@ -25,6 +28,8 @@ logging:
   level:
     root: info
     org.springframework.web: trace
+    org.springframework.security: debug
+    org.springframework.jdbc.core: trace
   file:
     name: application.log
     path: classpath:logs/application.log

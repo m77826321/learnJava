@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/authUser}" method="post">
+
+    <div th:if="${param.error}">
+        <i>invalid username and password</i>
+    </div>
+
+    <p>
+        User Name : <input type="text" name="username">
+    </p>
+    <p>
+        PassWord : <input type="password" name="password">
+    </p>
+    <input type="submit" value="login">
+
+</form>
+
+</body>
+</html>
